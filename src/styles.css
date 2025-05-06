@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'K2D';
+  font-style: normal;
+  src: url('assets/fonts/K2D-Light.ttf') format('truetype');
+}
+body{
+background-color: #e7eef7;
+}
+p {
+  color: black;
+}
