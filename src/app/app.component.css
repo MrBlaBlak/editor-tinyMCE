@@ -1,0 +1,6 @@
+nav {
+  margin-bottom: 1rem;
+}
+button.active {
+  font-weight: bold;
+}

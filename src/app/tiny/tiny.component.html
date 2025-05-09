@@ -1,0 +1,44 @@
+<main class="main">
+  <form method="post">
+    <div id="mytextarea">
+      <p>W celu rozwiązania zadania wykonaj następujące kroki:</p>
+      <ol>
+        <li>Przygotowanie testowego bucketa S3: <ul>
+          <li>Zaloguj się do konsoli AWS jako&nbsp;<code>root</code>,</li>
+          <li>Przejdź do usługi S3,</li>
+          <li>Utw&oacute;rz nowy bucket: <ul>
+            <li>Nazwa:&nbsp;<code>test-bucket-[suffix]</code>, gdzie suffix to pierwsze 3 litery Twojego imienia i nazwiska połączone razem,</li>
+            <li>Pozostaw domyślne ustawienia blokowania dostępu publicznego,</li>
+          </ul>
+          </li>
+          <li>Prześlij dowolny plik tekstowy do bucketa,</li>
+        </ul>
+        </li>
+        <li>Utworzenie roli dla EC2:<br>
+          <ul>
+            <li>Wybierz "Roles" i kliknij "Create role",</li>
+            <li>Wybierz "AWS service" jako typ zaufanej jednostki,</li>
+            <li>Z listy przypadk&oacute;w użycia wybierz "EC2",</li>
+            <li>Dodaj następujące polityki uprawnień: <ul>
+              <li>&ldquo;AmazonS3ReadOnlyAccess&rdquo;</li>
+            </ul>
+            </li>
+            <li>Nazwij rolę "EC2-S3-ReadOnly",</li>
+          </ul>
+        </li>
+        <li>Konfiguracja instancji EC2: <ul>
+          <li>Przejdź do EC2 i uruchom nową instancję: <ul>
+            <li>Amazon Linux 2023,</li>
+            <li><code>t2.micro,</code></li>
+            <li>Użyj istniejącej pary kluczy,</li>
+            <li>W sekcji "Advanced details" znajdź "IAM instance profile",</li>
+            <li>Wybierz utworzoną wcześniej rolę "EC2-S3-ReadOnly",</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu5IBwWrGTYoQuLcj3yps9MZPCkCTOQmtstA&amp;s" alt="" width="352" height="143"></li>
+          </ul>
+          </li>
+        </ul>
+        </li>
+      </ol>
+    </div>
+  </form>
+</main>
